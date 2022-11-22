@@ -9,9 +9,11 @@ import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
+@Getter
+@Setter
 @Entity
 public class Persona {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,6 +28,5 @@ public class Persona {
 
     @Size(min = 1, max = 50, message = "Requisitos no alcanzados")
     private String img;
-    
-    
+
 }
