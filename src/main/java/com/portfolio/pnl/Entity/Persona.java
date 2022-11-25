@@ -28,5 +28,4 @@ public class Persona {
 
     @Size(min = 1, max = 50, message = "Requisitos no alcanzados")
     private String img;
-
 }
