@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.portfolio</groupId>
-    <artifactId>pnl</artifactId>
+    <artifactId>HNL</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>pnl</name>
+    <name>HNL</name>
     <description>Portfolio Nicolás Loto</description>
     <properties>
         <java.version>1.8</java.version>
@@ -77,8 +77,12 @@
             <version>0.11.5</version>
             <scope>runtime</scope>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 
     <build>
