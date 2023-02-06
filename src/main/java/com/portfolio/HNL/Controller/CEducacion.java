@@ -56,7 +56,7 @@ public class CEducacion {
         return new ResponseEntity(new Mensaje("Educación creada exitosamente"), HttpStatus.OK);
     }
     
-    @PutMapping("/edit/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoEducacion dtoeducacion) {
         if (!sEducacion.existsById(id)) {
             return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.NOT_FOUND);

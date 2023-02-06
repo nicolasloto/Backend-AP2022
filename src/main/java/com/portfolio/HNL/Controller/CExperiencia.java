@@ -57,7 +57,7 @@ public class CExperiencia {
         return new ResponseEntity(new Mensaje("Experiencia creada exitosamente"), HttpStatus.OK);
     }
 
-    @PutMapping("/edit/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoExperiencia dtoexperiencia) {
         if (!sExperiencia.existsById(id)) {
             return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.NOT_FOUND);
