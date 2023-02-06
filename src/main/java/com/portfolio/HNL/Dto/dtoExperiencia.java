@@ -6,14 +6,21 @@ public class dtoExperiencia {
 
     @NotBlank
     private String nombreXP;
+    @NotBlank
     private String descXP;
+    @NotBlank
+    private String inicioXP;
+    @NotBlank
+    private String finalXP;
 
     public dtoExperiencia() {
     }
 
-    public dtoExperiencia(String nombreXP, String descXP) {
+    public dtoExperiencia(String nombreXP, String descXP, String inicioXP, String finalXP) {
         this.nombreXP = nombreXP;
         this.descXP = descXP;
+        this.inicioXP = inicioXP;
+        this.finalXP = finalXP;
     }
 
     public String getNombreXP() {
@@ -32,4 +39,19 @@ public class dtoExperiencia {
         this.descXP = descXP;
     }
 
+    public String getInicioXP() {
+        return inicioXP;
+    }
+
+    public void setInicioXP(String inicioXP) {
+        this.inicioXP = inicioXP;
+    }
+
+    public String getFinalXP() {
+        return finalXP;
+    }
+
+    public void setFinalXP(String finalXP) {
+        this.finalXP = finalXP;
+    }
 }

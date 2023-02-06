@@ -1,6 +1,6 @@
 package com.portfolio.HNL.Security;
 
-import com.portfolio.HNL.Security.Service.UserDetailsServiceImpl;
+import com.portfolio.HNL.Security.Service.UserDetailsImpl;
 import com.portfolio.HNL.Security.jwt.JwtEntryPoint;
 import com.portfolio.HNL.Security.jwt.JwtTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +21,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MainSecurity {
-
     @Autowired
-    UserDetailsServiceImpl userDetailsServiceImpl;
+    UserDetailsImpl userDetailsImpl;
 
     @Autowired
     JwtEntryPoint jwtEntryPoint;

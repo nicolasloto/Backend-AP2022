@@ -1,6 +1,6 @@
 package com.portfolio.HNL.Security.jwt;
 
-import com.portfolio.HNL.Security.Service.UserDetailsServiceImpl;
+import com.portfolio.HNL.Security.Service.UserDetailsImpl;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -21,7 +21,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     @Autowired
     JwtProvider jwtProvider;
     @Autowired
-    UserDetailsServiceImpl userDetailsServiceImpl;
+    UserDetailsImpl userDetailsImpl;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -29,7 +29,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             String token = getToken(request);
             if (token != null && jwtProvider.validateToken(token)) {
                 String nombreUsuario = jwtProvider.getNombreUsuarioFromToken(token);
-                UserDetails userDetails = userDetailsServiceImpl.loadUserByUsername(nombreUsuario);
+                UserDetails userDetails = userDetailsImpl.loadUserByUsername(nombreUsuario);
                 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userDetails,
                         null, userDetails.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(auth);
