@@ -21,7 +21,6 @@ public class SExperiencia {
 
     public Optional<Experiencia> getOne(int id) {
         return rExperiencia.findById(id);
-
     }
 
     public Optional<Experiencia> getByNombreXP(String nombreXP) {

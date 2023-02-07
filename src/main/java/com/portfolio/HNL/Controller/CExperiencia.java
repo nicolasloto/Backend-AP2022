@@ -60,7 +60,7 @@ public class CExperiencia {
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoExperiencia dtoexperiencia) {
         if (!sExperiencia.existsById(id)) {
-            return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.BAD_REQUEST);
         }
         if (sExperiencia.existsByNombreXP(dtoexperiencia.getNombreXP()) && sExperiencia.getByNombreXP(dtoexperiencia.getNombreXP()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Experiencia existente"), HttpStatus.BAD_REQUEST);
