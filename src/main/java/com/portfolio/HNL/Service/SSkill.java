@@ -12,33 +12,33 @@ import org.springframework.stereotype.Service;
 @Service
 public class SSkill {
     @Autowired
-    RSkill rskill;
+    RSkill rSkill;
     
     public List<Skill> list(){
-        return rskill.findAll();
+        return rSkill.findAll();
     }
     
     public Optional<Skill> getOne(int id){
-        return rskill.findById(id);
+        return rSkill.findById(id);
     }
     
     public Optional<Skill> getByNombre(String nombre){
-        return rskill.findByNombre(nombre);
+        return rSkill.findByNombre(nombre);
     }
     
     public void save(Skill skill){
-        rskill.save(skill);
+        rSkill.save(skill);
     }
     
     public void delete(int id){
-        rskill.deleteById(id);
+        rSkill.deleteById(id);
     }
     
     public boolean existsById(int id){
-        return rskill.existsById(id);
+        return rSkill.existsById(id);
     }
     
     public boolean existsByNombre(String nombre){
-        return rskill.existsByNombre(nombre);
+        return rSkill.existsByNombre(nombre);
     }
 }

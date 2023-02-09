@@ -59,7 +59,7 @@ public class CSkill {
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoSkill dtoskill) {
         if (!sSkill.existsById(id)) {
-            return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.NOT_FOUND);
         }
         if (sSkill.existsByNombre(dtoskill.getNombre()) && sSkill.getByNombre(dtoskill.getNombre()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Nombre existente"), HttpStatus.BAD_REQUEST);

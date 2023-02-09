@@ -59,7 +59,7 @@ public class CEducacion {
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoEducacion dtoeducacion) {
         if (!sEducacion.existsById(id)) {
-            return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.NOT_FOUND);
         }
         if (sEducacion.existsByNombreEd(dtoeducacion.getNombreEd()) && sEducacion.getByNombreEd(dtoeducacion.getNombreEd()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Nombre existente"), HttpStatus.BAD_REQUEST);

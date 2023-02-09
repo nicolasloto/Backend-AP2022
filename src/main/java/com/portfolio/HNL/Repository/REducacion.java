@@ -9,5 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface REducacion extends JpaRepository<Educacion, Integer> {
 
     public Optional<Educacion> findByNombreEd(String nombreEd);
+    
     public boolean existsByNombreEd(String nombreEd);
 }
